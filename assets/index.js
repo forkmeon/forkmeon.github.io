@@ -27044,7 +27044,7 @@
 		"author": "xudafeng@126.com",
 		"repository": {
 			"type": "git",
-			"url": "https://github.com/forkmeon/forkmeon.github.com.git"
+			"url": "https://github.com/forkmeon/forkmeon.github.io.git"
 		},
 		"scripts": {
 			"lint": "make lint"
