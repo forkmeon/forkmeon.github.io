@@ -26854,7 +26854,7 @@
 	    value: function render() {
 	      return React.createElement(
 	        'div',
-	        { style: this.getOuterStyle() },
+	        { className: this.props.classPrefix + '-ribbon', style: this.getOuterStyle() },
 	        React.createElement(
 	          'a',
 	          { target: '_blank', style: this.getInnerStyle(), href: this.props.linkUrl },
@@ -26868,6 +26868,7 @@
 	})(React.Component);
 
 	RibbonComponent.defaultProps = {
+	  classPrefix: 'github',
 	  fixed: false,
 	  flat: false,
 	  linkUrl: '',
@@ -27035,7 +27036,7 @@
 
 	module.exports = {
 		"name": "forkmeon.github.io",
-		"version": "1.1.0",
+		"version": "1.1.1",
 		"description": "Fork me on Github Generator",
 		"keywords": [
 			"github"
@@ -27054,7 +27055,7 @@
 			"lint"
 		],
 		"devDependencies": {
-			"react": "~0.13.1",
+			"react": "~0.13.3",
 			"mocha": "*",
 			"istanbul-harmony": "~0.3.0",
 			"should": "*",

@@ -6,6 +6,8 @@ install:
 	@npm install
 build:
 	@${npm_bin}/webpack
+watch:
+	@${npm_bin}/webpack --watch
 pull:
 	@git pull origin ${git_version}
 push:
