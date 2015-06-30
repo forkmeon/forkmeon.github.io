@@ -1,0 +1,39 @@
+{
+  "name": "forkmeon.github.io",
+  "version": "1.1.0",
+  "description": "Fork me on Github Generator",
+  "keywords": [
+    "github"
+  ],
+  "homepage": "http://forkmeon.github.io",
+  "author": "xudafeng@126.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/forkmeon/forkmeon.github.io.git"
+  },
+  "scripts": {
+    "lint": "make lint"
+  },
+  "dependencies": {
+  },
+  "precommit": [
+    "lint"
+  ],
+  "devDependencies": {
+    "react": "~0.13.1",
+    "mocha": "*",
+    "istanbul-harmony": "~0.3.0",
+    "should": "*",
+    "eslint-plugin-react": "~2.5.2",
+    "webpack": "~1.9.0",
+    "babel-core": "^5.x",
+    "babel-loader": "^5.x",
+    "jsx-loader": "^0.12.2",
+    "json-loader": "^0.5.2",
+    "startserver": "*",
+    "marked": "0.3.2",
+    "highlight.js": "~8.3.0",
+    "react-logo": "~1.0.4"
+  },
+  "licenses": "MIT"
+}
