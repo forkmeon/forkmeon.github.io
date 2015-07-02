@@ -26749,7 +26749,11 @@
 	  overflow: 'hidden',
 	  padding: '6px 0',
 	  textAlign: 'center',
-	  transform: 'rotate(45deg)',
+	  WebkitTransform: 'rotate(45deg)',
+	  MozTransform: 'rotate(45deg)',
+	  msTransform: 'rotate(45deg)',
+	  OTransform: 'rotate(45deg)',
+	  Transform: 'rotate(45deg)',
 	  textDecoration: 'none',
 	  color: '#fff',
 	  position: 'inherit',
@@ -27036,7 +27040,7 @@
 
 	module.exports = {
 		"name": "forkmeon.github.io",
-		"version": "1.1.1",
+		"version": "1.1.2",
 		"description": "Fork me on Github Generator",
 		"keywords": [
 			"github"
