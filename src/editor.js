@@ -49,7 +49,7 @@ class EditorComponent extends React.Component {
           html: html
         });
       }
-    }
+    };
   }
 
   getEditorProps() {

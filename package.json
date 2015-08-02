@@ -16,8 +16,13 @@
   },
   "dependencies": {
   },
-  "precommit": [
+  "pre-commit": [
     "lint"
+  ],
+  "startserver": [
+    {
+      "startserver-webpack": "*"
+    }
   ],
   "devDependencies": {
     "react": "~0.13.3",
@@ -31,9 +36,11 @@
     "jsx-loader": "^0.12.2",
     "json-loader": "^0.5.2",
     "startserver": "*",
+    "startserver-webpack": "*",
     "marked": "0.3.2",
     "highlight.js": "~8.3.0",
-    "react-logo": "~1.0.4"
+    "react-logo": "~1.0.7",
+    "pre-commit": "*"
   },
   "licenses": "MIT"
 }
