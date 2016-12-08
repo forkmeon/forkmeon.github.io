@@ -1,6 +1,6 @@
-## Fork me on Github – CSS ribbon
+# Fork me on Github – CSS ribbon
 
-CSS implementation of [GitHub ribbon](https://github.com/blog/273-github-ribbons).
+CSS implementation of [GitHub ribbon](//github.com/blog/273-github-ribbons).
 
 ## Usage
 

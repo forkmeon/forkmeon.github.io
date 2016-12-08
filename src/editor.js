@@ -12,6 +12,7 @@
  * ================================================================ */
 
 let React = require('react');
+
 let RibbonComponent = require('..');
 let Util = require('./util');
 let pkg = require('../package.json');
