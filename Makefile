@@ -8,10 +8,6 @@ build:
 	@${npm_bin}/webpack
 watch:
 	@${npm_bin}/webpack --watch
-pull:
-	@git pull origin ${git_version}
-push:
-	@git push origin ${git_version}
 lint:
 	@${npm_bin}/eslint src
 server: install

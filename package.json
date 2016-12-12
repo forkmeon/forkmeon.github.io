@@ -1,6 +1,6 @@
 {
   "name": "forkmeon.github.io",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "Fork me on Github Generator",
   "keywords": [
     "github"
@@ -14,8 +14,7 @@
   "scripts": {
     "lint": "make lint"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "pre-commit": [
     "lint"
   ],
@@ -25,22 +24,23 @@
     }
   ],
   "devDependencies": {
-    "react": "~0.13.3",
-    "mocha": "*",
-    "istanbul-harmony": "~0.3.0",
-    "should": "*",
-    "eslint-plugin-react": "~2.5.2",
-    "webpack": "~1.9.0",
     "babel-core": "^5.x",
     "babel-loader": "^5.x",
-    "jsx-loader": "^0.12.2",
+    "eslint-plugin-react": "~2.5.2",
+    "highlight.js": "~8.3.0",
+    "istanbul-harmony": "~0.3.0",
     "json-loader": "^0.5.2",
+    "jsx-loader": "^0.12.2",
+    "marked": "0.3.2",
+    "mocha": "*",
+    "node-libs-browser": "^2.0.0",
+    "pre-commit": "*",
+    "react": "~0.13.3",
+    "react-logo": "~1.0.7",
+    "should": "*",
     "startserver": "*",
     "startserver-webpack": "*",
-    "marked": "0.3.2",
-    "highlight.js": "~8.3.0",
-    "react-logo": "~1.0.7",
-    "pre-commit": "*"
+    "webpack": "~1.9.0"
   },
   "licenses": "MIT"
 }

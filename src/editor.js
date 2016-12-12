@@ -22,7 +22,27 @@ function formatExports(content) {
     .replace(/\sdata-reactid=\"\S+\"/g, '');
 }
 
-const events = ['textInputChangeHandler', 'linkUrlInputChangeHandler', 'fixedCheckboxChangeHandler', 'flatCheckboxChangeHandler', 'horizontalRadioChangeHandler', 'verticalRadioChangeHandle', 'borderCheckboxChangeHandler'];
+function formatCssExports(content) {
+  var elementContainerCss = content.elementContainerCss;
+  var elementAnchorCss = content.elementAnchorCss;
+  var res = `.${this.refs.demo.props.classPrefix}-ribbon {\n  ${elementContainerCss.replace(/;\s+/g, ';\n  ')}\n}\n`;
+  res += `.${this.refs.demo.props.classPrefix}-ribbon a {\n  ${elementAnchorCss.replace(/;\s+/g, ';\n  ')}\n}\n`;
+  return res;
+}
+
+function formatInnerHtml() {
+  return `<div class="${this.refs.demo.props.classPrefix}-ribbon">\n  <a target="_blank" href="${this.state.href}">${this.refs.demo.props.text}</a>\n</div>`;
+}
+
+const events = [
+  'textInputChangeHandler',
+  'linkUrlInputChangeHandler',
+  'fixedCheckboxChangeHandler',
+  'flatCheckboxChangeHandler',
+  'horizontalRadioChangeHandler',
+  'verticalRadioChangeHandle',
+  'borderCheckboxChangeHandler'
+];
 
 class EditorComponent extends React.Component {
   constructor(props) {
@@ -44,12 +64,27 @@ class EditorComponent extends React.Component {
   bind(props) {
     var that = this;
     props.onDemoUpdateDid = function() {
-      var html = React.findDOMNode(that.refs.demo).outerHTML;
-      if (html !== that.state.html) {
+      var outerHtml = React.findDOMNode(that.refs.demo).outerHTML;
+
+      if (typeof DOMParser !== 'undefined') {
+        var parser = new DOMParser();
+        var node = parser.parseFromString(outerHtml, 'text/html');
+        var elementContainerCss = node.querySelector('div').style.cssText;
+        var elementAnchorCss = node.querySelector('a').style.cssText;
+        var href = node.querySelector('a').href;
+      }
+
+      if (outerHtml !== that.state.outerHtml) {
         that.setState({
-          html: html
+          outerHtml: outerHtml,
+          cssContent: {
+            elementContainerCss: elementContainerCss,
+            elementAnchorCss: elementAnchorCss
+          },
+          href: href
         });
       }
+
     };
   }
 
@@ -62,8 +97,20 @@ class EditorComponent extends React.Component {
   }
 
   getExportHtml() {
-    if (this.state.html) {
-      return formatExports(this.state.html);
+    if (this.state.outerHtml) {
+      return formatExports(this.state.outerHtml);
+    }
+  }
+
+  getExportCss() {
+    if (this.state.cssContent) {
+      return formatCssExports.call(this, this.state.cssContent);
+    }
+  }
+
+  getExportInnerHtml() {
+    if (this.state.href) {
+      return formatInnerHtml.call(this);
     }
   }
 
@@ -150,6 +197,11 @@ class EditorComponent extends React.Component {
         <div className="form-group">
           <label className="control-label">link</label>
           <input className="form-control" placeholder={this.props.linkUrl} onChange={this.linkUrlInputChangeHandler} type="text" />
+        </div>
+        <div className="form-group">
+          <label className="control-label">copy css</label>
+          <pre>{this.getExportCss()}</pre>
+          <pre>{this.getExportInnerHtml()}</pre>
         </div>
         <div className="form-group">
           <label className="control-label">copy html</label>
