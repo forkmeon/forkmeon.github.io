@@ -1,6 +1,6 @@
 {
   "name": "forkmeon.github.io",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "Fork me on Github Generator",
   "keywords": [
     "github"
@@ -11,7 +11,7 @@
     "url": "https://github.com/forkmeon/forkmeon.github.io.git"
   },
   "scripts": {
-    "lint": "make lint"
+    "lint": "eslint src lib"
   },
   "dependencies": {},
   "pre-commit": [
