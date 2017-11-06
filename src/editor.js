@@ -6,7 +6,7 @@ let pkg = require('../package.json');
 
 function formatExports(content) {
   return content
-    .replace(/\sdata-reactid=\"\S+\"/g, '');
+    .replace(/\sdata-reactid="\S+"/g, '');
 }
 
 function formatCssExports(content) {
@@ -71,7 +71,6 @@ class EditorComponent extends React.Component {
           href: href
         });
       }
-
     };
   }
 

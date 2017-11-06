@@ -8,3 +8,7 @@ CSS implementation of [GitHub ribbon](//github.com/blog/273-github-ribbons).
 var Component = require('forkmeon.github.io');
 React.render(<Component />, document.body);
 ```
+
+## License
+
+The MIT License (MIT)
