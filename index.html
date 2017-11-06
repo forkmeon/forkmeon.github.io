@@ -5,11 +5,26 @@
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
     <title>Fork me on Github</title>
     <link rel="shortcut icon" href="assets/image/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="assets/bootstrap.min.css"/>
-    <link rel="stylesheet" href="assets/index.css"/>
     <base target="_blank"/>
   </head>
   <body>
-    <script src="//npmcdn.com/forkmeon.github.io@latest/assets/index.js"></script>
+    <script>
+      var isOnline = !!~location.host.indexOf('github');
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = (isOnline ? '//npmcdn.com/forkmeon.github.io@latest' : '.') + '/assets/index.js';
+      var link1 = document.createElement('link');
+      link1.rel = 'stylesheet';
+      link1.type = 'text/css';
+      link1.href = (isOnline ? '//npmcdn.com/forkmeon.github.io@latest' : '.') + '/assets/bootstrap.min.css';
+      var link2 = document.createElement('link');
+      link2.rel = 'stylesheet';
+      link2.type = 'text/css';
+      link2.href = (isOnline ? '//npmcdn.com/forkmeon.github.io@latest' : '.') + '/assets/index.css';
+      var head = document.getElementsByTagName('head')[0];
+      head.appendChild(link1);
+      head.appendChild(link2);
+      head.appendChild(script);
+    </script>
   </body>
 </html>
