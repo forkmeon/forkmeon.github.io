@@ -1,6 +1,6 @@
 {
   "name": "forkmeon.github.io",
-  "version": "1.1.6",
+  "version": "1.1.8",
   "description": "Fork me on Github Generator",
   "keywords": [
     "github"
@@ -11,20 +11,20 @@
     "url": "https://github.com/forkmeon/forkmeon.github.io.git"
   },
   "scripts": {
-    "lint": "eslint src lib"
+    "dev": "webpack-dev-server",
+    "prepublish": "npm run build",
+    "lint": "eslint src lib",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
+  "main": "./dist",
   "dependencies": {},
   "pre-commit": [
     "lint"
   ],
-  "startserver": [
-    {
-      "startserver-webpack": "*"
-    }
-  ],
   "devDependencies": {
     "babel-core": "^5.x",
     "babel-loader": "^5.x",
+    "cross-env": "^5.1.1",
     "eslint-plugin-react": "~2.5.2",
     "highlight.js": "~8.3.0",
     "istanbul-harmony": "~0.3.0",
@@ -37,9 +37,8 @@
     "react": "~0.13.3",
     "react-logo": "~1.0.7",
     "should": "*",
-    "startserver": "*",
-    "startserver-webpack": "*",
-    "webpack": "~1.9.0"
+    "webpack": "^3.5.3",
+    "webpack-dev-server": "^2.7.1"
   },
   "licenses": "MIT"
 }

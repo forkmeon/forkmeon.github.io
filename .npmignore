@@ -2,7 +2,6 @@
 test/
 Makefile
 coverage/
-plugins/
 docs/
 logs/
 *.html

@@ -4,10 +4,11 @@ var path = require('path');
 
 var config = {
   entry: {
-    index: path.resolve('src')
+    homepage: path.resolve('homepage')
   },
   output: {
-    path: path.join(__dirname, 'assets'),
+    path: path.join(__dirname, 'dist'),
+    publicPath: '/dist/',
     filename: '[name].js'
   },
   externals: {
