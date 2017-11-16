@@ -75,9 +75,7 @@ class EditorComponent extends React.Component {
   }
 
   getEditorProps() {
-    var props = {};
-    Util.merge(props, this.props);
-    Util.merge(props, this.state);
+    var props = Object.assign({}, this.props, this.state);
     this.bind(props);
     return props;
   }
