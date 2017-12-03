@@ -1,7 +1,7 @@
 let React = require('react');
+let ReactDOM = require('react-dom');
 let RibbonComponent = require('..');
 
-let Util = require('./util');
 let pkg = require('../package.json');
 
 function formatExports(content) {
@@ -51,7 +51,7 @@ class EditorComponent extends React.Component {
   bind(props) {
     var that = this;
     props.onDemoUpdateDid = function() {
-      var outerHtml = React.findDOMNode(that.refs.demo).outerHTML;
+      var outerHtml = ReactDOM.findDOMNode(that.refs.demo).outerHTML;
 
       if (typeof DOMParser !== 'undefined') {
         var parser = new DOMParser();

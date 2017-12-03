@@ -1,4 +1,5 @@
 let React = require('react');
+let ReactDOM = require('react-dom');
 
 let Util = require('./util');
 let LayoutComponent = require('./layout');
@@ -47,4 +48,4 @@ MainComponent.defaultProps = {
   globalData: {}
 };
 
-React.render(<MainComponent />, document.body);
+ReactDOM.render(<MainComponent />, document.querySelector('#app'));

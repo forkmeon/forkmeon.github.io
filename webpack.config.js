@@ -11,9 +11,6 @@ var config = {
     publicPath: '/dist/',
     filename: '[name].js'
   },
-  externals: {
-    react: 'window.React'
-  },
   module: {
     loaders: [
       {
