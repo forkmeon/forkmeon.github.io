@@ -4,6 +4,7 @@ var path = require('path');
 
 var config = {
   entry: {
+    index: path.resolve('index'),
     homepage: path.resolve('homepage')
   },
   output: {
@@ -14,12 +15,17 @@ var config = {
   module: {
     loaders: [
       {
-        test: /\.js$/,
-        loader: 'jsx-loader?harmony'
+        test: /\.js?$/,
+        loader: 'jsx-loader',
+        exclude: /node_modules/
       },
       {
-        test: /\.js$/,
-        loader: 'babel-loader'
+        test: /\.js?$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+        query: {
+          presets: ['react', 'env', 'stage-2']
+        }
       },
       {
         test: /\.json$/,
