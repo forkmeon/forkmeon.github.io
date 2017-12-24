@@ -1,8 +1,8 @@
 let React = require('react');
 let ReactDOM = require('react-dom');
-let RibbonComponent = require('..');
 
 let pkg = require('../package.json');
+let RibbonComponent = require('../lib/ribbon');
 
 function formatExports(content) {
   return content

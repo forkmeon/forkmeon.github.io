@@ -14,13 +14,14 @@
     "dev": "webpack-dev-server",
     "prepublish": "npm run build",
     "lint": "eslint src lib",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules && babel lib/ --out-dir dist/ -D"
   },
-  "main": "./dist/index.js",
+  "main": "./dist/ribbon.js",
   "pre-commit": [
     "lint"
   ],
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.17.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-istanbul": "^4.1.5",
@@ -39,14 +40,13 @@
     "highlight.js": "~8.3.0",
     "istanbul-harmony": "~0.3.0",
     "json-loader": "^0.5.2",
-    "jsx-loader": "^0.12.2",
     "marked": "^0.3.7",
     "mocha": "*",
     "node-libs-browser": "^2.0.0",
     "pre-commit": "*",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-logo": "^1.0.14",
+    "react-logo": "^1.0.15",
     "should": "*",
     "webpack": "^3.5.3",
     "webpack-dev-server": "^2.7.1"
