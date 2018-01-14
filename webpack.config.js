@@ -11,7 +11,7 @@ var config = {
   },
   output: {
     path: path.join(__dirname, 'dist'),
-    publicPath: '/dist/',
+    publicPath: 'dist',
     filename: '[name].js',
   },
   module: {
@@ -24,6 +24,10 @@ var config = {
       {
         test: /\.json$/,
         loader: 'json-loader'
+      },
+      {
+        test:/\.less$/,
+        loader:"style-loader!css-loader!less-loader"
       }
     ]
   }

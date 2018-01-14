@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
     <title>Fork me on Github</title>
-    <link rel="shortcut icon" href="assets/image/favicon.ico" type="image/x-icon" />
+    <link href="//unpkg.com/bootstrap@latest/dist/css/bootstrap.min.css" rel="stylesheet" />
     <base target="_blank"/>
   </head>
   <body>
@@ -14,17 +14,7 @@
         var script = document.createElement('script');
         script.type = 'text/javascript';
         script.src = (isOnline ? '//unpkg.com/forkmeon.github.io@latest' : '.') + '/dist/homepage.js';
-        var link1 = document.createElement('link');
-        link1.rel = 'stylesheet';
-        link1.type = 'text/css';
-        link1.href = (isOnline ? '//unpkg.com/forkmeon.github.io@latest' : '.') + '/assets/bootstrap.min.css';
-        var link2 = document.createElement('link');
-        link2.rel = 'stylesheet';
-        link2.type = 'text/css';
-        link2.href = (isOnline ? '//unpkg.com/forkmeon.github.io@latest' : '.') + '/assets/index.css';
         var head = document.getElementsByTagName('head')[0];
-        head.appendChild(link1);
-        head.appendChild(link2);
         head.appendChild(script);
       </script>
     </div>
