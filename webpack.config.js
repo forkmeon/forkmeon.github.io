@@ -4,7 +4,8 @@ const path = require('path');
 
 var config = {
   entry: {
-    homepage: path.resolve('homepage')
+    homepage: path.resolve('homepage'),
+    ribbon: path.resolve('lib', 'ribbon')
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json']
