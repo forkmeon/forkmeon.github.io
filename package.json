@@ -1,6 +1,6 @@
 {
   "name": "forkmeon.github.io",
-  "version": "1.1.15",
+  "version": "1.1.16",
   "description": "Fork me on Github Generator",
   "keywords": [
     "github"
@@ -14,7 +14,7 @@
     "dev": "webpack-dev-server",
     "prepublish": "npm run build",
     "lint": "eslint src lib",
-    "build": "cross-env NODE_ENV=production webpack -p && babel lib/ --out-dir dist/ -D"
+    "build": "cross-env NODE_ENV=production webpack -p"
   },
   "main": "./dist/ribbon.js",
   "pre-commit": [
@@ -50,7 +50,6 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-logo": "^1.0.15",
-    "should": "*",
     "style-loader": "^0.19.1",
     "webpack": "^3.5.3",
     "webpack-dev-server": "^2.7.1"
